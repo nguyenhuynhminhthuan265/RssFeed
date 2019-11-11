@@ -23,7 +23,7 @@
 
             />
         <Button
-            android:id="@+id/btnDanTri"
+            android:id="@+id/btnThanhNien"
             android:layout_height="100dp"
             android:layout_width="wrap_content"
             android:text="THANH NIÊN"
@@ -37,20 +37,20 @@
     </TableRow>
     <TableRow>
         <Button
-            android:id="@+id/btn1"
+            android:id="@+id/btn24h"
             android:layout_height="100dp"
             android:layout_width="wrap_content"
-            android:text="code"
+            android:text="24h.com.vn"
             android:textSize="25dp"
             android:background="@android:color/white"
 
 
             />
         <Button
-            android:id="@+id/btn2"
+            android:id="@+id/btnNguoiDuaTin"
             android:layout_height="100dp"
             android:layout_width="wrap_content"
-            android:text="code"
+            android:text="Người ĐƯA TIN"
             android:textSize="25dp"
             android:background="@android:color/white"
 

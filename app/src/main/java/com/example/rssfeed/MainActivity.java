@@ -49,7 +49,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.category_layout);
         final Button btnVnexpress = findViewById(R.id.btnVnexpress);
-        Button btnDanTri = findViewById(R.id.btnDanTri);
+        final Button btnThanhNien = findViewById(R.id.btnThanhNien);
+        final Button btn24h = findViewById(R.id.btn24h);
+        final Button btnNguoiDuaTin = findViewById(R.id.btnNguoiDuaTin);
+        //final Button btnDanTri = findViewById(R.id.btnThanhNien);
         btnVnexpress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,7 +77,7 @@ public class MainActivity extends Activity {
 
             }
         });
-        btnDanTri.setOnClickListener(new View.OnClickListener() {
+        btnThanhNien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setContentView(R.layout.activity_main);
@@ -99,6 +102,52 @@ public class MainActivity extends Activity {
         });
 
 
+        btn24h.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.activity_main);
+                txtTitle=findViewById(R.id.txtTitle);
+                channel = "24h";
+                title="CHANNELS IN 24H.COM.VN";
+                txtTitle.setText(title);
+                String[][] myUrlCaptionMenu = {
+
+                        {"https://www.24h.com.vn/upload/rss/bongda.rss", "BÓNG ĐÁ"},
+                        {"https://www.24h.com.vn/upload/rss/amthuc.rss", "ẨM THỰC"},
+                        {"https://www.24h.com.vn/upload/rss/thoitrang.rss", "THỜI TRANG"},
+                        {"https://www.24h.com.vn/upload/rss/taichinhbatdongsan.rss", "TÀI CHÍNH-BẤT ĐỘNG SẢN"}
+
+                };
+
+                //define convenient URL and CAPTIONs arrays
+
+                channel(myUrlCaptionMenu,channel);
+            }
+        });
+
+
+        btnNguoiDuaTin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.activity_main);
+                txtTitle=findViewById(R.id.txtTitle);
+                channel = "NGƯỜI ĐƯA TIN";
+                title="CHANNELS IN NGƯỜI ĐƯA TIN";
+                txtTitle.setText(title);
+                String[][] myUrlCaptionMenu = {
+
+                        {"https://www.nguoiduatin.vn/rss/phap-luat.rss", "PHÁP LUẬT"},
+                        {"https://www.24h.com.vn/upload/rss/amthuc.rss", "NHỊP SỐNG"},
+                        {"https://www.nguoiduatin.vn/rss/kinh-doanh.rss", "KINH DOANH"},
+                        {"https://www.nguoiduatin.vn/rss/cong-nghe.rss", "CÔNG NGHỆ"}
+
+                };
+
+                //define convenient URL and CAPTIONs arrays
+
+                channel(myUrlCaptionMenu,channel);
+            }
+        });
 
 
 
