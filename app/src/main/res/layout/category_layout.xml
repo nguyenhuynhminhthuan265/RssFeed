@@ -2,6 +2,7 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:stretchColumns="*"
+
     >
 
     <TextView
@@ -12,7 +13,9 @@
 
         />
 
-    <TableRow>
+    <TableRow
+
+        >
         <Button
             android:id="@+id/btnVnexpress"
             android:layout_height="100dp"
@@ -20,6 +23,7 @@
             android:text="Vnexpress"
             android:textSize="25dp"
             android:background="@android:color/white"
+            android:layout_margin="10dp"
 
 
             />
@@ -30,7 +34,7 @@
             android:text="THANH NIÊN"
             android:textSize="25dp"
             android:background="@android:color/white"
-
+            android:layout_margin="10dp"
             />
 
 
@@ -44,7 +48,7 @@
             android:text="24h.com.vn"
             android:textSize="25dp"
             android:background="@android:color/white"
-
+            android:layout_margin="10dp"
 
             />
         <Button
@@ -54,7 +58,7 @@
             android:text="Người ĐƯA TIN"
             android:textSize="25dp"
             android:background="@android:color/white"
-
+            android:layout_margin="10dp"
             />
 
 
