@@ -41,7 +41,7 @@ public class ShowHeadlines extends Activity {
         urlAddress = myBundle.getString("urlAddress");
         urlCaption = myBundle.getString("urlCaption");
         channel = myBundle.getString("channel");
-        txtTitle.setText(title + urlCaption + "-" + channel);
+        txtTitle.setText(title + urlCaption + " - " + channel);
         // update app's top 'TitleBar' (eg. 'NPR - Business Wed April 09, 2014')
         this.setTitle("NPR - " + urlCaption + " \t" + MainActivity.niceDate());
 // clicking on a row shows dialogBox with more info about selected item

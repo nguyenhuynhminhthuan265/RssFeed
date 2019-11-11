@@ -1,65 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:stretchColumns="*"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="android:attr\buttonBarStyle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
 
-    >
+    android:stretchColumns="*">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NEWS APP"
-        android:textSize="25dp"
+        android:paddingLeft="8sp"
 
-        />
+        android:paddingRight="4sp"
+        android:text="NEWS APP"
+        android:textColor="#585858"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:fontFamily="sans-serif-medium" />
 
     <TableRow
 
         >
+
         <Button
             android:id="@+id/btnVnexpress"
-            android:layout_height="100dp"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
-            android:text="Vnexpress"
-            android:textSize="25dp"
-            android:background="@android:color/white"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
+            android:background="#E2E0E0"
 
 
-            />
+            android:text="Vnexpress"
+            android:textSize="25sp" />
+
         <Button
             android:id="@+id/btnThanhNien"
-            android:layout_height="100dp"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
-            android:text="THANH NIÊN"
-            android:textSize="25dp"
-            android:background="@android:color/white"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
-            />
-
+            android:background="#E2E0E0"
+            android:text="THANH NIÊN"
+            android:textSize="25sp" />
 
 
     </TableRow>
+
     <TableRow>
+
         <Button
             android:id="@+id/btn24h"
-            android:layout_height="100dp"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
-            android:text="24h.com.vn"
-            android:textSize="25dp"
-            android:background="@android:color/white"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
+            android:background="#E2E0E0"
+            android:text="24h.com.vn"
+            android:textSize="25sp"
 
             />
+
         <Button
             android:id="@+id/btnNguoiDuaTin"
-            android:layout_height="100dp"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
-            android:text="Người ĐƯA TIN"
-            android:textSize="25dp"
-            android:background="@android:color/white"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
-            />
+            android:background="#E2E0E0"
+            android:text="Người ĐƯA TIN"
+            android:textSize="25sp" />
 
 
     </TableRow>
@@ -70,21 +81,25 @@
 
         <Button
             android:id="@+id/btnVietNamNet"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:background="@android:color/white"
+            android:layout_margin="10dp"
+            android:background="#E2E0E0"
             android:text="VietNamNet"
-            android:textSize="25dp"
+            android:textSize="25sp"
 
             />
 
         <Button
-            android:id="@+id/baogido"
+            android:id="@+id/btnVTC"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:background="@android:color/white"
-            android:text="baogido"
-            android:textSize="25dp"
+            android:layout_margin="10dp"
+            android:background="#E2E0E0"
+            android:text="VTC.VN"
+            android:textSize="25sp"
 
 
             />

@@ -50,6 +50,7 @@ public class MainActivity extends Activity {
         final Button btn24h = findViewById(R.id.btn24h);
         final Button btnNguoiDuaTin = findViewById(R.id.btnNguoiDuaTin);
         final Button btnVietNamNet = findViewById(R.id.btnVietNamNet);
+        final Button btnVTCVN = findViewById(R.id.btnVTC);
 
         btnVnexpress.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -177,6 +178,42 @@ public class MainActivity extends Activity {
                         {"https://vietnamnet.vn/rss/ban-doc.rss", "Bạn đọc"},
                         {"https://vietnamnet.vn/rss/tuanvietnam.rss", "Tuần Việt Nam"},
                         {"https://vietnamnet.vn/rss/oto-xe-may.rss", "Xe"},
+                };
+
+                //define convenient URL and CAPTIONs arrays
+
+                channel(myUrlCaptionMenu, channel);
+
+            }
+        });
+
+        btnVTCVN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.activity_main);
+                txtTitle = findViewById(R.id.txtTitle);
+                channel = "VTC.VN";
+                title = "CHANNELS IN VTC.VN";
+                txtTitle.setText(title);
+                toExit = false;
+                String[][] myUrlCaptionMenu = {
+                        {"https://vtc.vn/feed.rss", "Trang chủ"},
+                        {"https://vtc.vn/xa-hoi.rss", "Xã hội"},
+                        {"https://vtc.vn/kinh-te.rss", "Kinh tế"},
+                        {"https://vtc.vn/truyen-hinh.rss", "Truyền hình"},
+                        {"https://vtc.vn/phap-luat.rss", "Pháp luật"},
+                        {"https://vtc.vn/the-gioi.rss", "Thế giới"},
+                        {"https://vtc.vn/dia-oc.rss", "Địa ốc"},
+                        {"https://vtc.vn/giai-tri.rss", "Giải trí"},
+                        {"https://vtc.vn/the-thao.rss", "Thể thao"},
+                        {"https://vtc.vn/gioi-tre.rss", "Giới trẻ"},
+                        {"https://vtc.vn/doanh-nghiep-doanh-nhan.rss", "Doanh nghiệp - Doanh nhân"},
+                        {"https://vtc.vn/phong-su-kham-pha.rss", "Phóng sự khám phá"},
+                        {"https://vtc.vn/giao-duc.rss", "Giáo dục"},
+                        {"https://vtc.vn/cong-nghe.rss", "Công nghệ"},
+                        {"https://vtc.vn/oto-xe-may.rss", "Ô tô xe máy"},
+                        {"https://vtc.vn/suc-khoe-doi-song.rss", "Sức khỏe đời sống"},
+                        {"https://vtc.vn/khoe-va-dep.rss", "Khỏe và đẹp"}
                 };
 
                 //define convenient URL and CAPTIONs arrays

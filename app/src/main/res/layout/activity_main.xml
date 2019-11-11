@@ -18,10 +18,10 @@
             android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            android:textSize="20sp"
 
 
-            />
+            android:textStyle="bold" />
         <ListView
             android:id="@+id/myListView"
             android:layout_width="match_parent"
