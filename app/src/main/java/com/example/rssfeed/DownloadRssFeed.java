@@ -114,5 +114,5 @@ public class DownloadRssFeed extends AsyncTask<String, Void, ArrayList<SingleIte
         } catch (DOMException e) {
             return new SingleItem("", "Error", e.getMessage(), null);
         }
-        }
+    }
 }

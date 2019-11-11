@@ -10,19 +10,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.StringTokenizer;
 
 public class MainActivity extends Activity {
     // Main GUI - A NEWS application based on National Public Radio RSS material
@@ -33,6 +24,7 @@ public class MainActivity extends Activity {
     TextView txtTitle;
     String title;
     String channel;
+    Boolean toExit;
     int option; // number of lines from text file
 
     // hard-coding main NEWS categories (TODO: use a resource file)
@@ -40,7 +32,11 @@ public class MainActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-       onCreate(null);
+        if (toExit == false) {
+
+            onCreate(null);
+        } else
+            super.onBackPressed();
     }
 
 
@@ -48,11 +44,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.category_layout);
+        toExit = true;
         final Button btnVnexpress = findViewById(R.id.btnVnexpress);
         final Button btnThanhNien = findViewById(R.id.btnThanhNien);
         final Button btn24h = findViewById(R.id.btn24h);
         final Button btnNguoiDuaTin = findViewById(R.id.btnNguoiDuaTin);
-        //final Button btnDanTri = findViewById(R.id.btnThanhNien);
+        final Button btnVietNamNet = findViewById(R.id.btnVietNamNet);
+
         btnVnexpress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,6 +59,7 @@ public class MainActivity extends Activity {
                 channel = "VNEXPRESS";
                 title="CHANNELS IN VNEXPRESS";
                 txtTitle.setText(title);
+                toExit = false;
                 String[][] myUrlCaptionMenu = {
 
                         {"https://vnexpress.net/rss/thoi-su.rss", "THỜI SỰ"},
@@ -85,6 +84,7 @@ public class MainActivity extends Activity {
                 channel = "THANH NIÊN";
                 title="CHANNELS IN THANH NIÊN";
                 txtTitle.setText(title);
+                toExit = false;
                 String[][] myUrlCaptionMenu = {
 
                         {"https://thanhnien.vn/rss/viet-nam.rss", "THỜI SỰ"},
@@ -110,6 +110,7 @@ public class MainActivity extends Activity {
                 channel = "24h";
                 title="CHANNELS IN 24H.COM.VN";
                 txtTitle.setText(title);
+                toExit = false;
                 String[][] myUrlCaptionMenu = {
 
                         {"https://www.24h.com.vn/upload/rss/bongda.rss", "BÓNG ĐÁ"},
@@ -134,10 +135,11 @@ public class MainActivity extends Activity {
                 channel = "NGƯỜI ĐƯA TIN";
                 title="CHANNELS IN NGƯỜI ĐƯA TIN";
                 txtTitle.setText(title);
+                toExit = false;
                 String[][] myUrlCaptionMenu = {
 
                         {"https://www.nguoiduatin.vn/rss/phap-luat.rss", "PHÁP LUẬT"},
-                        {"https://www.24h.com.vn/upload/rss/amthuc.rss", "NHỊP SỐNG"},
+                        {"https://www.nguoiduatin.vn/rss/nhip-song.rss", "NHỊP SỐNG"},
                         {"https://www.nguoiduatin.vn/rss/kinh-doanh.rss", "KINH DOANH"},
                         {"https://www.nguoiduatin.vn/rss/cong-nghe.rss", "CÔNG NGHỆ"}
 
@@ -149,12 +151,40 @@ public class MainActivity extends Activity {
             }
         });
 
+        btnVietNamNet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.activity_main);
+                txtTitle = findViewById(R.id.txtTitle);
+                channel = "VietNamNet";
+                title = "CHANNELS IN VietNamNet";
+                txtTitle.setText(title);
+                toExit = false;
+                String[][] myUrlCaptionMenu = {
+                        {"https://vietnamnet.vn/rss/thoi-su-chinh-tri.rss", "Chính trị"},
+                        {"https://vietnamnet.vn/rss/talkshow.rss", "Talkshow"},
+                        {"https://vietnamnet.vn/rss/thoi-su.rss", "Thời sự"},
+                        {"https://vietnamnet.vn/rss/kinh-doanh.rss", "Kinh doanh"},
+                        {"https://vietnamnet.vn/rss/giai-tri.rss", "Giải trí"},
+                        {"https://vietnamnet.vn/rss/the-gioi.rss", "Thế giới"},
+                        {"https://vietnamnet.vn/rss/giao-duc.rss", "Giáo dục"},
+                        {"https://vietnamnet.vn/rss/doi-song.rss", "Đời sống"},
+                        {"https://vietnamnet.vn/rss/phap-luat.rss", "Pháp luật"},
+                        {"https://vietnamnet.vn/rss/the-thao.rss", "Thể thao"},
+                        {"https://vietnamnet.vn/rss/cong-nghe.rss", "Công nghệ"},
+                        {"https://vietnamnet.vn/rss/suc-khoe.rss", "Sức khỏe"},
+                        {"https://vietnamnet.vn/rss/bat-dong-san.rss", "Bất động sản"},
+                        {"https://vietnamnet.vn/rss/ban-doc.rss", "Bạn đọc"},
+                        {"https://vietnamnet.vn/rss/tuanvietnam.rss", "Tuần Việt Nam"},
+                        {"https://vietnamnet.vn/rss/oto-xe-may.rss", "Xe"},
+                };
 
+                //define convenient URL and CAPTIONs arrays
 
+                channel(myUrlCaptionMenu, channel);
 
-
-
-
+            }
+        });
 
 
     }//onCreate
@@ -169,15 +199,13 @@ public class MainActivity extends Activity {
 
 
         context = getApplicationContext();
-        this.setTitle("NPR Headline News\n" + niceDate());
+        this.setTitle("Vietnam Headline News\n" + niceDate());
         // user will tap on a ListView’s row to request category’s headlines
         myMainListView = this.findViewById(R.id.myListView);
         myMainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> _av, View _v,
                                     int _index, long _id)
             {
-
-
                 String urlAddress = myUrlAddress[_index];
                 String urlCaption = myUrlCaption[_index];
                 //create an Intent to talk to activity: ShowHeadlines

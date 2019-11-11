@@ -3,10 +3,11 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:stretchColumns="*"
     >
+
     <TextView
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="NEW APP"
+        android:layout_height="wrap_content"
+        android:text="NEWS APP"
         android:textSize="25dp"
 
         />
@@ -57,6 +58,31 @@
             />
 
 
+    </TableRow>
 
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnVietNamNet"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:background="@android:color/white"
+            android:text="VietNamNet"
+            android:textSize="25dp"
+
+            />
+
+        <Button
+            android:id="@+id/baogido"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:background="@android:color/white"
+            android:text="baogido"
+            android:textSize="25dp"
+
+
+            />
     </TableRow>
 </TableLayout>
